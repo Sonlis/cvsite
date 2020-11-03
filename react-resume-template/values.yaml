@@ -35,9 +35,10 @@ securityContext: {}
 
 service:
   type: loadBalancer
+  port: 80
   annotations: 
     metallb.universe.tf/address-pool: default
-  port: 80
+  
 
 ingress:
   enabled: false
