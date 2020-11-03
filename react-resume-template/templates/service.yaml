@@ -6,6 +6,8 @@ metadata:
     {{- include "react-portfolio.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
+  annotations:
+    {{ .Values.service.annotations | toYaml} | nindent 4}
   ports:
     - port: {{ .Values.service.port }}
       targetPort: http
