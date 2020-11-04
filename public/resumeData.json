@@ -33,25 +33,25 @@
       {
         "school":"Aalto university, Finland",
         "degree":"Master in Cloud and Network infrastructure",
-        "dates":"2021/2022",
+        "graduated":"2021/2022",
         "description":""
       },
       {
         "school":"Technische Universität Berlin, Germany",
         "degree":"Master in Cloud and Network infrastructure",
-        "dates":"2019/2020",
+        "graduated":"2019/2020",
         "description":"Projects with GCP, AWS, Kubernetes, Ansible and Maven."
       },
       {
         "school":"Robert Gordon University, Scotland",
         "degree":"Bachelor in Computer Network Management and Design",
-        "dates":"2018/2019",
+        "graduated":"2018/2019",
         "description":"Projects with Python, Nagios, AWS, Cisco switches and routers."
       },
       {
         "school":"IUT de Blagnac",
         "degree":"Technology diploma in Networks and Telecommunications",
-        "dates":"2016/2018",
+        "graduated":"2016/2018",
         "description":"Switching, routing, Python, C#, Java, HTML/CSS, SQL, WAN/LAN/WLAN/PAN. Cisco CCNA routing and switching 1 & 2 obtained"
       }
     ],
@@ -59,7 +59,7 @@
       {
         "company":"Lendico",
         "title":"SRE engineer working student",
-        "years":"August 2020 - ?",
+        "graduated":"August 2020 - ?",
         "description":"Assure and improve the reliability of the site, for both outside customers - Ingresses, HA, downtime reduction- and developpers - Containerization, Automation. Azure Cloud, AKS kubernetes clusters, Azure devOps / Jenkins, Vault, Helm, Git."
       }
     ],
@@ -92,36 +92,7 @@
   },
   "portfolio":{
     "projects": [
-      {
-        "title":"Canadian Wanderlust",
-        "category":"My Travel Blog for my post-university travels",
-        "image":"canadian-wanderlust.jpg",
-        "url":"https://www.canadianwanderlust.com"
-      },
-      {
-        "title":"Fury Fighting Gear",
-        "category":"(offline now) A fighting gear company I started",
-        "image":"fury-fighting-gear.jpg",
-        "url":"http://www.timbakerdev.com"
-      },
-      {
-        "title":"Original Thai Food",
-        "category":"Website I built for a restaurant I like in Thailand",
-        "image":"original-thai-food.jpg",
-        "url":"http://www.timbakerdev.com/originalthaifood.github.io"
-      },
-      {
-        "title":"Resume Website",
-        "category":"A React based resume website template",
-        "image":"resume-website.jpg",
-        "url":"http://www.timbakerdev.com"
-      },
-      {
-        "title":"Smirkspace",
-        "category":"(MVP Only) A React and Meteor based chat University project.",
-        "image":"smirkspace.jpg",
-        "url":"http://www.smirkspace.com"
-      }
+      
     ]
   },
   "testimonials":{
