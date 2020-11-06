@@ -28,3 +28,4 @@ spec:
           path: scripts
         name: build-script
   backoffLimit: 2
+  {{- end }}
