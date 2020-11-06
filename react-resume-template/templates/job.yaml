@@ -10,7 +10,7 @@ spec:
       containers:
         - name: {{ .Values.job.name }}
           image: "{{ .Values.job.repository }}:{{ .Values.job.imagetag }}"
-          command: {{- .Values.job.command | quote }}
+          command: {{- .Values.job.command }}
           volumeMounts:
             - mountPath: / 
               name: build-script
