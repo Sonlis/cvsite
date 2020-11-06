@@ -17,7 +17,7 @@ spec:
           - mountPath: / 
             name: build-script
             subPath: build.sh
-          restartPolicy: Never
+      restartPolicy: Never
           env:
             - name: BRANCH
               value: $ARGOCD_APP_SOURCE_TARGET_REVISION
