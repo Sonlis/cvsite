@@ -10,11 +10,12 @@ spec:
       containers:
         - name: {{ .Values.job.name }}
           image: "{{ .Values.job.repository }}:{{ .Values.job.imagetag }}"
-          command: {{- .Values.job.command }}
+          command: 
+            - build.sh
           volumeMounts:
-            - mountPath: / 
-              name: build-script
-              subPath: build.sh
+          - mountPath: / 
+            name: build-script
+            subPath: build.sh
           restartPolicy: Never
           env:
             - name: BRANCH
