@@ -20,7 +20,7 @@ spec:
       restartPolicy: Never
           env:
             - name: BRANCH
-              value: $ARGOCD_APP_SOURCE_TARGET_REVISION
+              value: "$ARGOCD_APP_SOURCE_TARGET_REVISION"
             - name: APP_NAME
               value: $ARGOCD_APP_NAME
             - name: REVISION
