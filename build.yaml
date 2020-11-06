@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: build-dockerfile
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: docker-build
+        image: docker:latest
+        command: 
+          - "build.sh"
+        volumeMounts:
+        - mountPath: / 
+          name: build-script
+          subPath: build.sh
+      restartPolicy: Never
+      env:
+        - name: BRANCH
+          value: $ARGOCD_APP_SOURCE_TARGET_REVISION
+        - name: APP_NAME
+          value: $ARGOCD_APP_NAME
+        - name: REVISION
+          value: $ARGOCD_APP_REVISION
+        
+      volumes:
+      - hostPath:
+          path: scripts
+        name: build-script
+  backoffLimit: 2
