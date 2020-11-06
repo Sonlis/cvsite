@@ -4,7 +4,7 @@
     "occupation":"Cloud and Network Infrastructure master student / SRE engineer working student",
     "description":"Welcome to my resume website, which is both a resume and a proof of work of my skills",
     "image":"profilepic.jpg",
-    "bio":"I am a a Cloud and Network infrastructures enthusiast, especially interested in reliability, micro-services and automation.",
+    "bio":"I am a Cloud and Network infrastructures enthusiast, especially interested in reliability, micro-services and automation.",
     "contactmessage":"Here is where you should write your message to readers to have them get in contact with you.",
     "email": "bastien.jeannelle@gmail.com",
     "phone": "+33 781835965",
@@ -12,8 +12,8 @@
       "city":"Berlin",
       "zip": "14059"
     },
-    "website": "http://www.timbakerdev.com",
-    "resumedownload":"http://timbakerdev.com",
+    "website": "http://www.bastien.jeannelle.com",
+    "resumedownload":"http://bastien.jeannelle.com",
     "social":[
       {
         "name":"linkedin",
@@ -59,7 +59,7 @@
       {
         "company":"Lendico",
         "title":"SRE engineer working student",
-        "graduated":"August 2020 - ?",
+        "years":"August 2020 - ?",
         "description":"Assure and improve the reliability of the site, for both outside customers - Ingresses, HA, downtime reduction- and developpers - Containerization, Automation. Azure Cloud, AKS kubernetes clusters, Azure devOps / Jenkins, Vault, Helm, Git."
       }
     ],
