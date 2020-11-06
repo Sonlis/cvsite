@@ -1,4 +1,5 @@
 {{- if .Values.job.enabled -}}
+apiVersion: batch/v1
 kind: Job
 metadata:
     name: {{ .Values.job.metadataname }}
