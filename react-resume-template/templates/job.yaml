@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
         - name: {{ .Values.job.name }}
-          image: {{- .Values.job.image }}
+          image: "{{ .Values.job.repository }}:{{ .Values.job.imagetag }}"
           command: {{- .Values.job.command | quote }}
           volumeMounts:
             - mountPath: / 

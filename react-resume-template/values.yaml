@@ -86,5 +86,6 @@ hooks:
 job:
   enabled: true
   name: docker-build
-  image: docker:latest
+  repository: docker
+  imagetag: latest
   command: build.sh
