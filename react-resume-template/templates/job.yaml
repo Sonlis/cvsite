@@ -25,9 +25,9 @@ spec:
               value: $ARGOCD_APP_NAME
             - name: REVISION
               value: $ARGOCD_APP_REVISION
-    volumes:
-      - hostPath:
-          path: scripts
-        name: build-script
+      volumes:
+        - hostPath:
+            path: scripts
+          name: build-script
   backoffLimit: 2
   {{- end }}
