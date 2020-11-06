@@ -6,17 +6,28 @@ metadata:
     annotations:
     {{- .Values.hooks.annotations | toYaml | nindent 6 }}
 spec:
-  template:
+  entrypoint: git-clone
+  templates:
+  - name: git-clone
+    inputs:
+      artifacts:
+      - name: argo-source
+        path: /src
+        git:
+          repo: https://github.com/Sonlis/react-resume-template
+          usernameSecret:
+            name: github-creds
+            key: username
+          passwordSecret:
+            name: github-creds
+            key: password
     spec:
       containers:
         - name: {{ .Values.job.name }}
           image: "{{ .Values.job.repository }}:{{ .Values.job.imagetag }}"
+          workingDir: /src
           command: 
-            - build.sh
-          volumeMounts:
-          - mountPath: / 
-            name: build-script
-            subPath: build.sh
+            - scripts/build.sh
           env:
           - name: BRANCH
             value: $ARGOCD_APP_SOURCE_TARGET_REVISION
@@ -25,9 +36,5 @@ spec:
           - name: REVISION
             value: $ARGOCD_APP_REVISION
       restartPolicy: Never
-      volumes:
-        - hostPath:
-            path: scripts
-          name: build-script
   backoffLimit: 2
   {{- end }}
