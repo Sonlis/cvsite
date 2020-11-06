@@ -77,3 +77,9 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+job:
+  enabled: true
+  name: docker-build
+  image: docker:latest
+  command: build.sh
