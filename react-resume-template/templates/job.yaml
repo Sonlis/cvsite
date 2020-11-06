@@ -8,21 +8,21 @@ spec:
   template:
     spec:
       containers:
-        name: {{- .Values.job.name }}
-        image: "{{ .Values.job.image }}"
-        command: {{- .Values.job.command | quote }}
-        volumeMounts:
-          - mountPath: / 
-            name: build-script
-            subPath: build.sh
-        restartPolicy: Never
-        env:
-          - name: BRANCH
-            value: $ARGOCD_APP_SOURCE_TARGET_REVISION
-          - name: APP_NAME
-            value: $ARGOCD_APP_NAME
-          - name: REVISION
-            value: $ARGOCD_APP_REVISION
+        - name: {{ .Values.job.name }}
+          image: {{- .Values.job.image }}
+          command: {{- .Values.job.command | quote }}
+          volumeMounts:
+            - mountPath: / 
+              name: build-script
+              subPath: build.sh
+          restartPolicy: Never
+          env:
+            - name: BRANCH
+              value: $ARGOCD_APP_SOURCE_TARGET_REVISION
+            - name: APP_NAME
+              value: $ARGOCD_APP_NAME
+            - name: REVISION
+              value: $ARGOCD_APP_REVISION
     volumes:
       - hostPath:
           path: scripts
