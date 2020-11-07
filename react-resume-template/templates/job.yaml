@@ -17,24 +17,23 @@ spec:
           repo: https://github.com/Sonlis/react-resume-template
           usernameSecret:
             name: github-creds
-            key: username
+            key: username 
           passwordSecret:
             name: github-creds
             key: password
-    spec:
-      containers:
-        - name: {{ .Values.job.name }}
-          image: "{{ .Values.job.repository }}:{{ .Values.job.imagetag }}"
-          workingDir: /src
-          command: 
-            - scripts/build.sh
-          env:
+    containers:
+      - name: {{ .Values.job.name }}
+        image: "{{ .Values.job.repository }}:{{ .Values.job.imagetag }}"
+        workingDir: /src
+        command: 
+          - scripts/build.sh
+        env:
           - name: BRANCH
             value: $ARGOCD_APP_SOURCE_TARGET_REVISION
           - name: APP_NAME
             value: $ARGOCD_APP_NAME
           - name: REVISION
             value: $ARGOCD_APP_REVISION
-      restartPolicy: Never
+    restartPolicy: Never
   backoffLimit: 2
   {{- end }}
