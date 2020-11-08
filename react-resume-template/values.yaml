@@ -83,7 +83,7 @@ hooks:
     argocd.argoproj.io/hook: PreSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
 
-workflow: true
+workflow:
   metadata:
     namespace: webserver
     generateName: pre-cvsite-deploy
