@@ -27,10 +27,11 @@ spec:
           template: {{ $steps.template }}
     {{- if $steps.arguments }}
           arguments:
-    {{- range $artifacts = $steps.arguments }}
+    {{- range $arguments = $steps.arguments }}
             artifacts:
-            - name: {{ $artifacts.template }}
-              from: {{ $steps.from }}
+            - name: {{ $arguments.artifacts.template }}
+              from: {{ $arguments.artifacts.from }}
             parameters:
-            - name: {{ $steps.parameters.name }}
-              value: {{ $steps.parameters.value }}
+            - name: {{ $arguments.parameters.name }}
+              value: {{ $arguments.parameters.value }}
+    {{- end }}

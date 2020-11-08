@@ -23,15 +23,8 @@ serviceAccount:
 podAnnotations: {}
 
 podSecurityContext: {}
-  # fsGroup: 2000
 
 securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
 
 service:
   type: LoadBalancer
@@ -87,7 +80,6 @@ workflow:
   metadata:
     namespace: webserver
     generateName: pre-cvsite-deploy
-  spec:
     serviceAccountName: argo
     entrypoint: cicd
     volumes:
@@ -112,25 +104,9 @@ workflow:
            arguments:
              artifacts:
                name: git-repo
-               from: "{{steps.checkout.outputs.artifacts.source}}"
+               from: {{steps.checkout.outputs.artifacts.source}}
              parameters:
                name: image-tag
-               value: "{{steps.checkout.outputs.parameters.tag}}"
-           name: run-tests
-           template: run-tests
-           arguments:
-             artifacts:
-               name: git-repo
-               from: "{{steps.checkout.outputs.artifacts.source}}"
-             parameters:
-               name: image-tag
-               value: "{{steps.checkout.outputs.parameters.tag}}"
-           name: deploy-kubernetes
-           template: deploy-kubernetes
-           arguments:
-              artifacts:
-               name: git-repo
-               from: "{{steps.checkout.outputs.artifacts.source}}"
-             parameters:
-               name: image-tag
-               value: "{{steps.checkout.outputs.parameters.tag}}"
+               value: {{steps.checkout.outputs.parameters.tag}}
+
+           
