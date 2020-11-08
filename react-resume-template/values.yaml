@@ -97,11 +97,11 @@ workflow:
     arguments:
       parameters:
         name: repo
-        value: git@bitbucket.org:bouwe_ceunen/crypto-gathering-backend.git
+        value: https://github.com/Sonlis/react-resume-template.git
         name: revision
         value: master
         name: image-name-backend
-        value: docker-registry.k8s.bouweceunen.com/crypto-gathering/crypto-gathering-backend
+        value: https://hub.docker.com/repository/docker/bastibast/cvsite
     templates:
       name: cicd
       steps:
