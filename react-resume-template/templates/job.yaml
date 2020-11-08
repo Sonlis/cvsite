@@ -10,7 +10,7 @@ spec:
   - name: git-clone
     inputs:
       artifacts:
-      - name: argo-source 
+      - name: argo-source
         path: /src
         git:
           repo: https://github.com/Sonlis/react-resume-template
