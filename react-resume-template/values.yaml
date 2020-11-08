@@ -83,9 +83,54 @@ hooks:
     argocd.argoproj.io/hook: PreSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
 
-job:
-  enabled: true
-  name: docker-build
-  repository: docker
-  imagetag: latest
-  command: build.sh
+workflow: true
+  metadata:
+    namespace: webserver
+    generateName: pre-cvsite-deploy
+  spec:
+    serviceAccountName: argo
+    entrypoint: cicd
+    volumes:
+      name: docker-config
+      secret: 
+        secretName: regcred
+    arguments:
+      parameters:
+        name: repo
+        value: git@bitbucket.org:bouwe_ceunen/crypto-gathering-backend.git
+        name: revision
+        value: master
+        name: image-name-backend
+        value: docker-registry.k8s.bouweceunen.com/crypto-gathering/crypto-gathering-backend
+    templates:
+      name: cicd
+      steps:
+           name: checkout
+           template: checkout
+           name: build-push-docker
+           template: build-push-docker
+           arguments:
+             artifacts:
+               name: git-repo
+               from: "{{steps.checkout.outputs.artifacts.source}}"
+             parameters:
+               name: image-tag
+               value: "{{steps.checkout.outputs.parameters.tag}}"
+           name: run-tests
+           template: run-tests
+           arguments:
+             artifacts:
+               name: git-repo
+               from: "{{steps.checkout.outputs.artifacts.source}}"
+             parameters:
+               name: image-tag
+               value: "{{steps.checkout.outputs.parameters.tag}}"
+           name: deploy-kubernetes
+           template: deploy-kubernetes
+           arguments:
+              artifacts:
+               name: git-repo
+               from: "{{steps.checkout.outputs.artifacts.source}}"
+             parameters:
+               name: image-tag
+               value: "{{steps.checkout.outputs.parameters.tag}}"

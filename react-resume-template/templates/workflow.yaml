@@ -1,0 +1,36 @@
+{{- if .Values.workflow.enabled -}}
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  namespace: {{ Values.workflow.namespace }}
+  generateName: {{ Values.workflow.generatename }}
+spec:
+  hostNetwork: true
+  serviceAccountName: {{ Values.workflow.serviceaccountname}}
+  entrypoint: {{ Values.workflow.entrypoint }}
+{{- if Values.workflow.volumes }}
+  volumes:
+    name: {{- .Values.workflow.volume.name}}
+    secret: 
+      secretName: {{ .Values.workflow.secret.secretname }}
+{{ end }}
+  arguments:
+  {{- range $volume := .Values.workflow.arguments.parameters }}
+    parameters:
+    - name: {{ $volume.name }}
+      value: {{ $volume.value }}
+  templates:
+  - name: {{ .Values.workflow.templates.name }}
+    steps:
+    {{- range $steps = .Values.workflow.templates.steps}}
+      - - name: {{ $steps.name }}
+          template: {{ $steps.template }}
+    {{- if $steps.arguments }}
+          arguments:
+    {{- range $artifacts = $steps.arguments }}
+            artifacts:
+            - name: {{ $artifacts.template }}
+              from: {{ $steps.from }}
+            parameters:
+            - name: {{ $steps.parameters.name }}
+              value: {{ $steps.parameters.value }}
