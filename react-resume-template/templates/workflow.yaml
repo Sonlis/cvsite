@@ -30,8 +30,8 @@ spec:
     {{- range $arguments = $steps.arguments }}
             artifacts:
             - name: {{ $arguments.artifacts.template }}
-              from: {{ $arguments.artifacts.from }}
+              from: {{ $arguments.artifacts.from | quote }}
             parameters:
             - name: {{ $arguments.parameters.name }}
-              value: {{ $arguments.parameters.value }}
+              value: {{ $arguments.parameters.value | quote }}
     {{- end }}
