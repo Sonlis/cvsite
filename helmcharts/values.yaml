@@ -76,7 +76,7 @@ hooks:
     argocd.argoproj.io/hook: PreSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
 
-job: true
+job: 
   metadataname: prebuild
   name: build
 
