@@ -33,8 +33,7 @@ spec:
         volumeMounts:
         - mountPath: /data
           name: artifacts
-        command: ["/bin/sh"]
-        args: ["git clone https://github.com/Sonlis/react-resume-template /data"]
+        command: ["git", "clone", "https://github.com/Sonlis/react-resume-template", "/data"]
       volumes:
       - name: artifacts
         emptyDir: {}
