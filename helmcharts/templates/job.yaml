@@ -7,23 +7,11 @@ metadata:
     {{- .Values.hooks.annotations | toYaml | nindent 6 }}
 spec:
   template:
-  - name: git-clone
-    inputs:
-      artifacts:
-      - name: argo-source
-        path: /src
-        git:
-          repo: https://github.com/Sonlis/react-resume-template
-          usernameSecret:
-            name: github-creds
-            key: username 
-          passwordSecret:
-            name: github-creds
-            key: password
+  - name: docker-build
     containers:
       - name: {{ .Values.job.name }}
         image: "{{ .Values.job.repository }}:{{ .Values.job.imagetag }}"
-        workingDir: /src
+        workingDir: /scripts
         command: 
           - scripts/build.sh
         env:
