@@ -12,8 +12,8 @@ spec:
        app: {{ .Values.job.appname }}
     spec:
       containers:
-      - name: {{ .Values.job.name }}
-        image: "{{ .Values.job.repository }}:{{ .Values.job.imagetag }}"
+      - name: docker-builder
+        image: docker
         command: 
           - data/react-resume-template/scripts/build.sh
         volumeMounts:
