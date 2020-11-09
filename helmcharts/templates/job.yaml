@@ -27,8 +27,6 @@ spec:
           - name: REVISION
             value: $ARGOCD_APP_REVISION
       restartPolicy: Never
-    backoffLimit: 2
-
       initContainers:
       - name: git-cloner
         image: alpine/git
@@ -39,6 +37,9 @@ spec:
             - clone
             - https://github.com/Sonlis/react-resume-template
             - /data 
+    backoffLimit: 2
+
+      
 volumes:
 - name: artifacts
   emptyDir: {}
