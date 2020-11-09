@@ -7,8 +7,11 @@ metadata:
     {{- .Values.hooks.annotations | toYaml | nindent 6 }}
 spec:
   template:
-  - name: docker-build
-    containers:
+    metadata:
+      labels:
+       app: {{ .Values.job.appname }}
+    spec:
+      containers:
       - name: {{ .Values.job.name }}
         image: "{{ .Values.job.repository }}:{{ .Values.job.imagetag }}"
         command: 
@@ -23,18 +26,18 @@ spec:
             value: $ARGOCD_APP_NAME
           - name: REVISION
             value: $ARGOCD_APP_REVISION
-    restartPolicy: Never
-    backoffLimit: 2
-    initContainers:
-    - name: git-cloner
-    image: alpine/git
-    args:
-      - clone
-      - https://github.com/Sonlis/react-resume-template
-      - /data 
-    volumeMounts:
-    - mountPath: /data
-      name: artifacts
+      restartPolicy: Never
+      backoffLimit: 2
+      initContainers:
+      - name: git-cloner
+        image: alpine/git
+        args:
+        - clone
+        - https://github.com/Sonlis/react-resume-template
+        - /data 
+       volumeMounts:
+       - mountPath: /data
+       name: artifacts
 volumes:
 - name: artifacts
   emptyDir: {}
