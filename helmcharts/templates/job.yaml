@@ -37,11 +37,9 @@ spec:
             - clone
             - https://github.com/Sonlis/react-resume-template
             - /data 
-    backoffLimit: 2
-
-      
-volumes:
-- name: artifacts
-  emptyDir: {}
+  backoffLimit: 2
+  volumes:
+  - name: artifacts
+    emptyDir: {}
   {{- end }}
 

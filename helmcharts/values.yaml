@@ -78,6 +78,6 @@ hooks:
 
 job: 
   enabled: true 
-  metadataname: prebuild
+  appname: prebuild
   name: build
 
