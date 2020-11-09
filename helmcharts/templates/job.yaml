@@ -17,7 +17,7 @@ spec:
         command: 
           - data/react-resume-template/scripts/build.sh
         volumeMounts:
-        - mountPath: /
+        - mountPath: /data
           name: artifacts
         env:
           - name: BRANCH
