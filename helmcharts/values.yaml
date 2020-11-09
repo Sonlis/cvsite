@@ -76,37 +76,3 @@ hooks:
     argocd.argoproj.io/hook: PreSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
 
-workflow:
-  metadata:
-    namespace: webserver
-    generateName: pre-cvsite-deploy
-    serviceAccountName: argo
-    entrypoint: cicd
-    volumes:
-      name: docker-config
-      secret: 
-        secretName: regcred
-    arguments:
-      parameters:
-        name: repo
-        value: https://github.com/Sonlis/react-resume-template.git
-        name: revision
-        value: master
-        name: image-name-backend
-        value: https://hub.docker.com/repository/docker/bastibast/cvsite
-    templates:
-      name: cicd
-      steps:
-           name: checkout
-           template: checkout
-           name: build-push-docker
-           template: build-push-docker
-           arguments:
-             artifacts:
-               name: git-repo
-               from: {{steps.checkout.outputs.artifacts.source}}
-             parameters:
-               name: image-tag
-               value: {{steps.checkout.outputs.parameters.tag}}
-
-           
