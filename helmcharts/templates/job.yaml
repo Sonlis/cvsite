@@ -15,10 +15,10 @@ spec:
       - name: {{ .Values.job.name }}
         image: "{{ .Values.job.repository }}:{{ .Values.job.imagetag }}"
         command: 
-          - react-resume-template/scripts/build.sh
+          - data/react-resume-template/scripts/build.sh
         volumeMounts:
         - mountPath: /
-        - name: artifacts
+          name: artifacts
         env:
           - name: BRANCH
             value: $ARGOCD_APP_SOURCE_TARGET_REVISION
@@ -27,17 +27,18 @@ spec:
           - name: REVISION
             value: $ARGOCD_APP_REVISION
       restartPolicy: Never
-      backoffLimit: 2
+    backoffLimit: 2
+
       initContainers:
       - name: git-cloner
         image: alpine/git
+        volumeMounts:
+        - mountPath: /data
+          name: artifacts
         args:
-        - clone
-        - https://github.com/Sonlis/react-resume-template
-        - /data 
-       volumeMounts:
-       - mountPath: /data
-         name: artifacts
+            - clone
+            - https://github.com/Sonlis/react-resume-template
+            - /data 
 volumes:
 - name: artifacts
   emptyDir: {}
