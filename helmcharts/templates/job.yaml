@@ -37,7 +37,7 @@ spec:
         - /data 
        volumeMounts:
        - mountPath: /data
-       name: artifacts
+         name: artifacts
 volumes:
 - name: artifacts
   emptyDir: {}
