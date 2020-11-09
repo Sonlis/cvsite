@@ -23,6 +23,8 @@ spec:
             value: $ARGOCD_APP_NAME
           - name: REVISION
             value: $ARGOCD_APP_REVISION
+    restartPolicy: Never
+    backoffLimit: 2
     initContainers:
     - name: git-cloner
     image: alpine/git
@@ -36,7 +38,5 @@ spec:
   volumes:
   - name: artifacts
     emptyDir: {}
-  restartPolicy: Never
-  backoffLimit: 2
   {{- end }}
 
