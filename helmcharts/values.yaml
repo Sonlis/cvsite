@@ -71,13 +71,8 @@ tolerations: []
 
 affinity: {}
 
-hooks:
-  annotations:
-    argocd.argoproj.io/hook: PreSync
-    argocd.argoproj.io/hook-delete-policy: HookSucceeded
-
 job: 
-  enabled: true 
+  enabled: false
   appname: prebuild
   name: build
 
