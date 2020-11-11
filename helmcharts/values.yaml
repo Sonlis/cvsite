@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: bastibast/webserver
+  repository: bastibast/cvsite
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: cvsite
+  tag: master
 
 
 serviceAccount:
