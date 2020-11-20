@@ -3,14 +3,13 @@ jobs:
   Build:
     docker:
     - image: cimg/node:15.2.1
-    working_directory: /tmp
     steps:
     - checkout
     - run: yarn install
     - run: yarn global add react-scripts
     - run: yarn build
     persist_to_workspace:
-          root: .
+          root: ./
           paths:
             - build
             - helmcharts
