@@ -24,7 +24,7 @@ jobs:
         at: /tmp/workspace
     - run: ls /tmp/workspace
     - run: |
-          cp /tmp/workspace/build .
+          cp -r /tmp/workspace/build .
           TAG=1.$CIRCLE_BUILD_NUM
           docker build -t bastibast/cvsite:$TAG .
           echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
