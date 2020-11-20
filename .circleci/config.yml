@@ -8,7 +8,7 @@ jobs:
     - run: yarn install
     - run: yarn global add react-scripts
     - run: yarn build
-    persist_to_workspace:
+    - persist_to_workspace:
           root: .
           paths:
             - ./build
