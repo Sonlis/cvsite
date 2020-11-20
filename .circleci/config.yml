@@ -9,10 +9,10 @@ jobs:
     - run: yarn global add react-scripts
     - run: yarn build
     persist_to_workspace:
-          root: ./
+          root: .
           paths:
-            - build
-            - helmcharts
+            - ./build
+            - ./helmcharts
 
   Publish:
     docker:
