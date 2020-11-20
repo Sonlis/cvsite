@@ -28,7 +28,7 @@ jobs:
           docker build -t bastibast/cvsite:$TAG .
           echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
           docker push bastibast/cvsite:$TAG
-  generateHelm:
+  GenerateHelm:
     docker:
       - image: cimg/base:2020.06
     steps:
@@ -52,9 +52,12 @@ workflows:
   version: 2
   one_and_two:
     jobs:
-      - one
-      - two:
+      - Build
+      - Publish:
           requires:
-            - one
-Read more about workspaces here.
+            - Build
+      - GenerateHelm: 
+          requires:
+            - Publish
+
 
