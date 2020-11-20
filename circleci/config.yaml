@@ -1,0 +1,60 @@
+version: 2
+jobs:
+  Build:
+    docker:
+    - image: cimg/node:15.2.1
+    steps:
+    - checkout
+    - run: yarn install
+    - run: yarn global add react-scripts
+    - run: yarn build
+    persist_to_workspace:
+          root: .
+          paths:
+            - ./build
+            - ./helmcharts
+
+  Publish:
+    docker:
+    - image: cimg/base:2020.11
+    steps:
+    - checkout
+    - setup_remote_docker
+    - attach_workspace:
+        at: /tmp/workspace
+    - run: |
+          cp /tmp/workspace/build .
+          TAG=1.$CIRCLE_BUILD_NUM
+          docker build -t bastibast/cvsite:$TAG .
+          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+          docker push bastibast/cvsite:$TAG
+  generateHelm:
+    docker:
+      - image: cimg/base:2020.06
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - run : |
+          TAG=1.$CIRCLE_PREVIOUS_BUILD_NUM
+          git clone --single-branch --branch cvsite https://github.com/Sonlis/helmcharts /tmp/cvsite
+          cd /tmp/cvsite
+          cp /tmp/workspace/values.yaml .
+          sed -i 's/\(cvsite\)\(.*\)/\1:'$TAG'/' ./values.yaml
+          git config credential.helper 'cache --timeout=120'
+          git config user.email "bastien.jeannelle@gmail.com"
+          git config user.name "Sonlis"
+          git add .
+          git commit -m "Update via CircleCI"
+          # Push quietly to prevent showing the token in log
+          git push -q https://$GITHUB_PERSONAL_TOKEN@github.com/Sonlis/cvsite
+
+workflows:
+  version: 2
+  one_and_two:
+    jobs:
+      - one
+      - two:
+          requires:
+            - one
+Read more about workspaces here.
+
