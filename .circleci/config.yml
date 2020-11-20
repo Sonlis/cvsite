@@ -22,7 +22,6 @@ jobs:
     - setup_remote_docker
     - attach_workspace:
         at: /tmp/workspace
-    - run: ls /tmp/workspace
     - run: |
           cp -r /tmp/workspace/build .
           TAG=1.$CIRCLE_BUILD_NUM
