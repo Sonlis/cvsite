@@ -50,7 +50,7 @@ jobs:
 
 workflows:
   version: 2
-  one_and_two:
+  cvsite:
     jobs:
       - Build
       - Publish:
