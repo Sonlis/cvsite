@@ -85,7 +85,7 @@
         "level":"90%"
       },
       {
-        "name":"Jenkins, Azure devOps, ArgoCD",
+        "name":"Jenkins, Azure devOps, ArgoCD, CircleCI",
         "level":"65%"
       }
     ]
