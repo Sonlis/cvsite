@@ -36,7 +36,7 @@ jobs:
           at: /tmp/workspace
       - run : |
           TAG=1.0.$CIRCLE_PREVIOUS_BUILD_NUM
-          git clone --single-branch --branch cvsite https://$GITHUB_PERSONAL_TOKEN@github.com/Sonlis/helmcharts /tmp/cvsite
+          git clone https://$GITHUB_PERSONAL_TOKEN@github.com/Sonlis/helmcharts /tmp/cvsite
           cd /tmp/cvsite
           # cp /tmp/workspace/values.yaml .
           sed -i 's/\(.*tag:.*\)/  tag: '$TAG'/g' ./values.yaml
