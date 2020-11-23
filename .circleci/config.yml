@@ -17,8 +17,6 @@ jobs:
   Publish:
     docker:
     - image: cimg/base:2020.11
-    environment:
-      TAG: << pipeline.number >>
     steps:
     - checkout
     - setup_remote_docker
@@ -26,20 +24,18 @@ jobs:
         at: /tmp/workspace
     - run: |
           cp -r /tmp/workspace/build .
-          # TAG=1.0.<< pipeline.number >>
+          TAG=1.0.$CIRCLE_BUILD_NUM
           docker build -t bastibast/cvsite:$TAG .
           echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
           docker push bastibast/cvsite:$TAG
   GenerateHelm:
     docker:
       - image: cimg/base:2020.06
-    environment:
-      TAG: << pipeline.number >>
     steps:
       - attach_workspace:
           at: /tmp/workspace
       - run : |
-          # TAG=1.0.<< pipeline.number >>
+          TAG=1.0.$CIRCLE_PREVIOUS_BUILD_NUM
           git clone --single-branch --branch cvsite https://$GITHUB_PERSONAL_TOKEN@github.com/Sonlis/helmcharts /tmp/cvsite
           cd /tmp/cvsite
           # cp /tmp/workspace/values.yaml .
