@@ -147,7 +147,8 @@ body {
    font-weight: normal;
    font-size: 15px;
    line-height: 30px;
-	color: #B9B8B8  ;
+   /*color: #B9B8B8  ;*/
+   color: #555655;
 
    -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	-webkit-text-size-adjust: 100%;

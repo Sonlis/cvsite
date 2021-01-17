@@ -281,6 +281,26 @@ ul#nav li.current a { color: #F06000; }
    margin-top: 6px;
 }
 
+#resume .skillstable table {
+   border-collapse: collapse;
+}
+
+#resume .skillstable tr {
+   border: none;
+   
+}
+
+#resume .skillstable td {
+   text-align: center;
+   border-right: solid 1px #f000; 
+   border-left: solid 1px #f000;
+   padding-top: 1%;
+   padding-left: 3%;
+   padding-right: 3%;
+}
+
+
+
 /*----------------------------------------------*/
 /*	Skill Bars
 /*----------------------------------------------*/
@@ -427,7 +447,7 @@ ul#nav li.current a { color: #F06000; }
    letter-spacing: 1px;
    text-align: center;
    margin-bottom: 48px;
-   color: #FFFEFD;
+   color: #31302f;
 }
 
 /* Portfolio Content */
@@ -645,7 +665,7 @@ call-to-action .button {
 /* ------------------------------------------------------------------ */
 
 #testimonials {
-   background: #2B2B2B;
+   background: #fff;
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    background-attachment: fixed;
@@ -663,9 +683,9 @@ call-to-action .button {
    font: 18px/24px 'opensans-bold', sans-serif;
    text-transform: uppercase;
    letter-spacing: 3px;
-   color: #fff;
+   color: rgb(3, 3, 3);
 }
-#testimonials h1 span { display: none; }
+/*#testimonials h1 span { display: none; } */
 #testimonials .header-col { padding-top: 9px; }
 #testimonials .header-col h1:before {
    font-family: 'FontAwesome';
@@ -700,6 +720,14 @@ call-to-action .button {
    line-height: 18px;
    color: #fff;
 }
+
+#testimonials img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 60%;
+}
+
 #testimonials blockquote cite:before { content: "\2014 \0020"; }
 #testimonials blockquote cite a,
 #testimonials blockquote cite a:visited { color: #8B9798; border: none }

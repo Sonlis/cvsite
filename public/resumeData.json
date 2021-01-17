@@ -12,8 +12,8 @@
       "city":"Berlin",
       "zip": "14059"
     },
-    "website": "http://www.bastien.jeannelle.com",
-    "resumedownload":"http://bastien.jeannelle.com",
+    "website": "https://www.bastincloud.com",
+    "resumedownload":"https://bastincloud.com",
     "social":[
       {
         "name":"linkedin",
@@ -92,7 +92,24 @@
   },
   "portfolio":{
     "projects": [
-      
+      {
+        "title":"LedRemote",
+        "category":"Triggers a chosen display on Leds strips",
+        "image":"github.png",
+        "url":"https://github.com/Sonlis/phoneapp"
+      },
+      {
+        "title":"Internal-gateway",
+        "category":"Listens request from LedRemote and run according pattern",
+        "image":"github.png",
+        "url":"https://github.com/Sonlis/internal-gateway"
+      },
+      {
+        "title":"CVsite",
+        "category":"repo of this website",
+        "image":"github.png",
+        "url":"https://github.com/Sonlis/cvsite"
+      }
     ]
   },
   "testimonials":{

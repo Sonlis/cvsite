@@ -56,21 +56,36 @@ class Resume extends Component {
       <div className="row skill">
 
          <div className="three columns header-col">
-            <h1><span>Skills</span></h1>
+            <h1><span>Main skills</span></h1>
          </div>
+         <div className="skillstable">
 
-         <div className="nine columns main-col">
+         <table>
+<tr>
+    <th><h3>Cloud</h3></th>
+    <th><h3>Microservices</h3></th> 
+    <th><h3>CI/CD</h3></th>
+  </tr>
+  <tr>
+    <td>Azure AKS, DevOps, Blob storage</td>
+    <td>Kubernetes</td> 
+    <td>GitOps (ArgoCD, Tekton Pipelines)</td>
+  </tr>
+  <tr>
+    <td>AWS EKS, EC2, Lambda</td>
+    <td>Hashicorp products</td> 
+    <td>Jenkins</td>
+  </tr>
+  <tr>
+    <td>GCP GKE</td>
+    <td>Prometheus / Grafana</td>
+    <td>Helm</td>
+  </tr>
+</table>
+</div>
 
-            <p>{skillmessage}
-            </p>
-
-				<div className="bars">
-				   <ul className="skills">
-					  {skills}
-					</ul>
+<p><br /><h4>Other skills:</h4>Languages: Golang, Python, Bash <br /> Networking: CCNA routing and switching 1&2, DNS, HTTP(S) <br /> IoT: Raspberry Pi, ESP32, ESP8266<br />Virtualization: VMware, Proxmox<br />Linux: Ubuntu, Debian, ArchLinux, TinyCore</p>
 				</div>
-			</div>
-      </div>
    </section>
     );
   }
