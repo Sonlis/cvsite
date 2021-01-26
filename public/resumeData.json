@@ -13,7 +13,7 @@
       "zip": "14059"
     },
     "website": "https://www.bastincloud.com",
-    "resumedownload":"https://bastincloud.com",
+    "resumedownload":"https://bastincloud.com/CV",
     "social":[
       {
         "name":"linkedin",
@@ -52,7 +52,7 @@
         "school":"IUT de Blagnac",
         "degree":"Technology diploma in Networks and Telecommunications",
         "graduated":"2016/2018",
-        "description":"Switching, routing, Python, C#, Java, HTML/CSS, SQL, WAN/LAN/WLAN/PAN. Cisco CCNA routing and switching 1 & 2 obtained"
+        "description":"Switching, routing, Python, C, Java, HTML/CSS, SQL, WAN/LAN/WLAN/PAN. Cisco CCNA routing and switching 1 & 2 obtained"
       }
     ],
     "work":[

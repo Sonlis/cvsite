@@ -67,7 +67,7 @@ class Resume extends Component {
     <th><h3>CI/CD</h3></th>
   </tr>
   <tr>
-    <td>Azure AKS, DevOps, Blob storage</td>
+    <td>Azure AKS, DevOps, Blob storage, VMs, Functions</td>
     <td>Kubernetes</td> 
     <td>GitOps (ArgoCD, Tekton Pipelines)</td>
   </tr>
@@ -81,10 +81,20 @@ class Resume extends Component {
     <td>Prometheus / Grafana</td>
     <td>Helm</td>
   </tr>
+  <tr>
+    <td>Terraform</td>
+    <td>Admission Controller</td>
+    <td>CircleCI</td>
+  </tr>
+  <tr>
+    <td>Ingress Controller</td>
+    <td>Service Mesh</td>
+    <td></td>
+  </tr>
 </table>
 </div>
 
-<p><br /><h4>Other skills:</h4>Languages: Golang, Python, Bash <br /> Networking: CCNA routing and switching 1&2, DNS, HTTP(S) <br /> IoT: Raspberry Pi, ESP32, ESP8266<br />Virtualization: VMware, Proxmox<br />Linux: Ubuntu, Debian, ArchLinux, TinyCore</p>
+<p><br /><h4>Other skills:</h4><b>Languages</b>: Golang, Python, Bash <br /> <b>Networking</b>: CCNA routing and switching 1&2, DNS, HTTP(S) <br /> <b>IoT</b>: Raspberry Pi, ESP32, ESP8266<br /><b>Virtualization</b>: VMware, Proxmox<br /><b>Linux</b>: Ubuntu, Debian, ArchLinux, TinyCore</p>
 				</div>
    </section>
     );
