@@ -12,7 +12,7 @@ class Testimonials extends Component {
             </div>
 
             <div className="ten columns flex-container">
-               <img src="images/webarch.png" alt="Descriptive image"></img>
+               <img src="images/webarch.png" alt="Descriptive"></img>
                </div>
                
             <p><br />This website is as much as a CV as a proof of my knowledge, as well as a training environment.
