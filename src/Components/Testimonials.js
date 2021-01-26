@@ -2,18 +2,6 @@ import React, { Component } from 'react';
 
 class Testimonials extends Component {
   render() {
-
-    if(this.props.data){
-      var testimonials = this.props.data.testimonials.map(function(testimonials){
-        return  <li key={testimonials.user}>
-            <blockquote>
-               <p>{testimonials.text}</p>
-               <cite>{testimonials.user}</cite>
-            </blockquote>
-         </li>
-      })
-    }
-
     return (
       <section id="testimonials">
       <div className="text-container">
@@ -24,7 +12,7 @@ class Testimonials extends Component {
             </div>
 
             <div className="ten columns flex-container">
-               <img src="images/webarch.png" ></img>
+               <img src="images/webarch.png" alt="Descriptive image"></img>
                </div>
                
             <p><br />This website is as much as a CV as a proof of my knowledge, as well as a training environment.
