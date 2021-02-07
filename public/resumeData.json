@@ -4,8 +4,8 @@
     "occupation":"Cloud and Network Infrastructure master student / SRE engineer working student",
     "description":"Welcome to my resume website, which is both a resume and a proof of work of my skills",
     "image":"profilepic.jpg",
-    "bio":"I am a Cloud and Network infrastructures enthusiast, especially interested in reliability, micro-services and automation. I have studied in multiple opportunities, and did project with a wide range of people. ",
-    "contactmessage":"Here is where you should write your message to readers to have them get in contact with you.",
+    "bio":"I am a Cloud and Network infrastructures enthusiast, especially interested in reliability, micro-services and automation. I have studied in multiple countries, did projects and worked with a wide variety of people. Always looking for new challenges to test and improve my skills. ",
+    "contactmessage":"Get in touch !",
     "email": "bastien.jeannelle@gmail.com",
     "phone": "+33 781835965",
     "address":{
@@ -109,6 +109,12 @@
         "category":"repo of this website",
         "image":"github.png",
         "url":"https://github.com/Sonlis/cvsite"
+      },
+      {
+        "title":"Admission controller",
+        "category":"Golang admission controller for k8s",
+        "image":"github.png",
+        "url":"https://github.com/Sonlis/kube-admission-controller"
       }
     ]
   },
