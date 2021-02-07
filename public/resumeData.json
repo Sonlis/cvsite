@@ -4,7 +4,7 @@
     "occupation":"Cloud and Network Infrastructure master student / SRE engineer working student",
     "description":"Welcome to my resume website, which is both a resume and a proof of work of my skills",
     "image":"profilepic.jpg",
-    "bio":"I am a Cloud and Network infrastructures enthusiast, especially interested in reliability, micro-services and automation. I have studied in multiple countries, did projects and worked with a wide variety of people. Always looking for new challenges to test and improve my skills. ",
+    "bio":"I am a Cloud and Network infrastructures enthusiast, especially interested in reliability, micro-services and automation. I have studied in multiple countries, did projects and worked with a wide variety of people. Always looking for new challenges to test and improve my skills! This website is hosted on my bare-metal kubernetes cluster, which is a personnal test environment to keep up to date with micro-services technology.",
     "contactmessage":"Get in touch !",
     "email": "bastien.jeannelle@gmail.com",
     "phone": "+33 781835965",
