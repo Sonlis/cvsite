@@ -13,7 +13,7 @@
       "zip": "14059"
     },
     "website": "https://www.bastincloud.com",
-    "resumedownload":"https://bastincloud.com/CV",
+    "resumedownload":"https://bastincloud.com/bastiencv.pdf",
     "social":[
       {
         "name":"linkedin",
@@ -96,7 +96,7 @@
         "title":"LedRemote",
         "category":"Triggers a chosen display on Leds strips",
         "image":"github.png",
-        "url":"https://github.com/Sonlis/phoneapp"
+        "url":"https://github.com/Sonlis/leds-phoneapp"
       },
       {
         "title":"Internal-gateway",
